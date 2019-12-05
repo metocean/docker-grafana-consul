@@ -1,2 +1,2 @@
-# docker-grafana-consul
-Grafana Docker with consul
+# Grafana
+Grafana and consul on Ubuntu

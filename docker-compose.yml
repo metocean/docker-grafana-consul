@@ -1,0 +1,16 @@
+version: '2.0'
+
+services:
+    grafana:
+        build:
+            context: .
+        image: grafana
+        restart: always
+        network_mode: bridge
+        ports:
+            - '3000:3000'
+        environment:
+            GF_SECURITY_ADMIN_PASSWORD: admin
+        volumes:
+            - ./grafana.json:/consul/grafana.json
+            - ./containerpilot.json:/etc/containerpilot.json
