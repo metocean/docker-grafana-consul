@@ -8,9 +8,13 @@ services:
         restart: always
         network_mode: bridge
         ports:
-            - '3000:3000'
+            - '3001:3000'
         environment:
+            GF_INSTALL_PLUGINS: 'grafana-worldmap-panel,alexanderzobnin-zabbix-app,grafana-simple-json-datasource,ryantxu-ajax-panel,natel-plotly-panel,grafana-bigquery-datasource'
             GF_SECURITY_ADMIN_PASSWORD: admin
         volumes:
+            - ../../config/consul/consul-client.json:/consul/client.json
+            - ../../config/consul/consul-dc.json:/consul/dc.json
+            - ../../config/consul/consul-join.json:/consul/join.json
             - ./grafana.json:/consul/grafana.json
             - ./containerpilot.json:/etc/containerpilot.json

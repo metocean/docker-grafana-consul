@@ -1,4 +1,4 @@
-FROM grafana/grafana:6.5.1-ubuntu
+FROM grafana/grafana:8.5.0-ubuntu
 MAINTAINER Andre Lobato <andre@metocean.co.nz>
 
 USER root
@@ -7,7 +7,7 @@ RUN apt-get -y update && apt-get -y install \
     unzip \
     wget
 
-ENV CONSUL_VERSION=1.4.0
+ENV CONSUL_VERSION=1.6.10
 RUN echo "-----------------Install Consul-----------------" &&\
     cd /tmp &&\
     mkdir /consul &&\
